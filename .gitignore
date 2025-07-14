@@ -1,0 +1,103 @@
+# === FICHIERS DE DONNÉES SENSIBLES ===
+# Fichiers de sauvegarde des données originales
+*.backup.txt
+
+# Fichiers de données nettoyées
+*.cleaned.txt
+
+# Fichiers de données spécifiques du projet
+tab_paie_13_23.backup.txt
+tab_paie_13_23.cleaned.txt
+table_categorie.backup.txt
+table_categorie.cleaned.txt
+table_corps.backup.txt
+table_corps.cleaned.txt
+table_etablissement.backup.txt
+table_etablissement.cleaned.txt
+table_grade.backup.txt
+table_grade.cleaned.txt
+table_indemnite.backup.txt
+table_indemnite.cleaned.txt
+table_nature.backup.txt
+table_nature.cleaned.txt
+table_organigramme_5_ministeres.backup.txt
+table_organigramme_5_ministeres.cleaned.txt
+
+# === FICHIERS PYTHON ===
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# === ENVIRONNEMENTS VIRTUELS ===
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# === JUPYTER NOTEBOOK ===
+.ipynb_checkpoints
+
+# === FICHIERS SYSTÈME ===
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# === FICHIERS TEMPORAIRES ===
+*.tmp
+*.temp
+*.log
+
+# === DONNÉES CONFIDENTIELLES ===
+# Fichiers contenant des informations sensibles
+sensitive_data/
+confidential/
+private/
+
+# === RAPPORTS ET EXPORTS ===
+# Fichiers de sortie générés
+outputs/
+exports/
+reports/
+*.xlsx
+*.csv
+*.pdf
+
+# Garder le notebook principal pour le partage
+!Analyse_Salariale_Gouvernement_Tunisien.ipynb
+!salary_analyzer.py
+!clean_the_data.py
+!README.md

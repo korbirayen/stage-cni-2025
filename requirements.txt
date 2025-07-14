@@ -1,0 +1,22 @@
+# Data Analysis and Machine Learning
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.1.0
+statsmodels>=0.13.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.10.0
+
+# Additional utilities
+pathlib
+json
+datetime
+
+# Optional: For enhanced visualization and interaction
+ipywidgets>=7.6.0
+jupyter>=1.0.0
+
+# For file handling and encoding
+chardet>=4.0.0
