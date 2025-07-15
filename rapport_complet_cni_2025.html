@@ -160,25 +160,22 @@
             font-weight: 600;
         }
         
-        .table td {
+        .table td, .table th {
             padding: 1rem;
             border-bottom: 1px solid #ecf0f1;
-            color: #2c3e50;
+            color: #000 !important;
             font-weight: 500;
         }
-        
-        .warning .table td {
-            color: white !important;
+        .warning .table td, .success .table td, .card .table td, .card .table th {
+            color: #000 !important;
             font-weight: 500;
         }
-        
-        .success .table td {
-            color: white !important;
-            font-weight: 500;
-        }
-        
         .table tr:hover {
             background: #f8f9fa;
+        }
+        
+        .table th {
+            color: white !important;
         }
         
         .metrics-grid {
