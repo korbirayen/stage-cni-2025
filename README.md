@@ -1,8 +1,15 @@
-# Tunisian Government Salary Analysis and Prediction System
+# 📊 Analyse Prédictive de la Masse Salariale - CNI 2025
 
-## 📋 Overview
+## 🎯 Vue d'Ensemble du Projet
 
-This comprehensive system analyzes Tunisian government payroll data from 2013-2023 and provides predictions for 2025-2030. It includes staff evolution analysis, salary mass calculations, allowance tracking, and future trend predictions for all government departments.
+Ce projet présente une analyse complète et des modèles prédictifs pour optimiser la gestion de la masse salariale au Centre National de l'Informatique (CNI). Il combine analyse statistique avancée, modélisation prédictive multi-algorithmes, et solutions interactives pour l'aide à la décision.
+
+## 👥 Équipe
+
+- **🧑‍💻 Créateur :** Rayen Korbi (Stagiaire CNI)
+- **👩‍🏫 Superviseure :** Mme Sihem Hajji (Encadrante CNI)
+- **🏢 Organisation :** Centre National de l'Informatique (CNI)
+- **📅 Année :** 2025
 
 ## 🎯 Project Objectives
 

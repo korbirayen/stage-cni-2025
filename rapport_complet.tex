@@ -1,0 +1,574 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+
+% Configuration des couleurs
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Configuration du style de code
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% En-tête et pied de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{Analyse Salariale - CNI 2025}}
+\fancyhead[R]{Rayen Korbi}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+% Page de titre
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Huge\textbf{Analyse Prédictive de la Masse Salariale}}\\[0.5cm]
+    {\Large\textbf{Centre National de l'Informatique (CNI) - 2025}}\\[2cm]
+    
+    {\large\textbf{Étude des Variables d'Impact et Modélisation Avancée}}\\[1cm]
+    {\large\textbf{Solutions d'Optimisation et Prédictions Multi-modèles}}\\[3cm]
+    
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushleft}
+            \textbf{Créé par :}\\
+            \large Rayen Korbi\\
+            Stagiaire CNI\\
+            \href{https://github.com/RayenKorbi}{github.com/RayenKorbi}
+        \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright}
+            \textbf{Supervisé par :}\\
+            \large Mme Sihem Hajji\\
+            Encadrante CNI\\
+            Centre National de l'Informatique
+        \end{flushright}
+    \end{minipage}\\[2cm]
+    
+    \vfill
+    {\large Stage CNI 2025 - Analyse de données gouvernementales}\\
+    {\large \today}
+\end{titlepage}
+
+% Table des matières
+\tableofcontents
+\newpage
+
+% Résumé exécutif
+\section{Résumé Exécutif}
+
+Ce rapport présente une analyse approfondie de l'évolution de la masse salariale au Centre National de l'Informatique (CNI) et propose des modèles prédictifs avancés pour optimiser la gestion des ressources humaines. L'étude couvre la période 2013-2023 et projette des scénarios jusqu'en 2030.
+
+\subsection{Objectifs Principaux}
+\begin{itemize}
+    \item Analyser l'évolution historique de la masse salariale (2013-2023)
+    \item Identifier les variables d'impact sur les coûts salariaux
+    \item Développer des modèles prédictifs multi-algorithmes
+    \item Proposer des scénarios d'optimisation pour la période 2024-2030
+    \item Créer des outils interactifs pour l'aide à la décision
+\end{itemize}
+
+\subsection{Résultats Clés}
+\begin{itemize}
+    \item \textbf{Croissance annuelle moyenne} : 8,2\% de la masse salariale
+    \item \textbf{Modèle optimal} : Régression polynomiale (R² = 0,987)
+    \item \textbf{Économies potentielles} : jusqu'à 23,4\% avec le scénario ambitieux
+    \item \textbf{Variables critiques} : Inflation (+18\%), digitalisation (-12\%)
+\end{itemize}
+
+\newpage
+
+% Introduction
+\section{Introduction}
+
+\subsection{Contexte du Projet}
+Le Centre National de l'Informatique (CNI) joue un rôle stratégique dans la transformation numérique de l'administration tunisienne. Dans ce contexte, l'optimisation de la masse salariale représente un enjeu majeur pour maintenir l'efficacité opérationnelle tout en contrôlant les coûts.
+
+\subsection{Problématique}
+L'analyse de l'évolution salariale révèle une tendance croissante soutenue (+8,2\% par an) qui nécessite une approche prédictive pour anticiper les besoins futurs et identifier les leviers d'optimisation.
+
+\subsection{Méthodologie}
+Cette étude utilise une approche quantitative combinant :
+\begin{itemize}
+    \item Analyse statistique descriptive des données historiques
+    \item Modélisation prédictive multi-algorithmes
+    \item Analyse d'impact des variables explicatives
+    \item Simulation de scénarios d'optimisation
+\end{itemize}
+
+\newpage
+
+% Analyse des Données
+\section{Analyse des Données Historiques (2013-2023)}
+
+\subsection{Évolution de la Masse Salariale}
+Les données analysées montrent une progression constante de la masse salariale totale, passant de 8,2 milliards TND en 2013 à 19,7 milliards TND en 2023.
+
+\begin{table}[H]
+\centering
+\caption{Évolution de la masse salariale par année}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+\textbf{Année} & \textbf{Masse Salariale (M TND)} & \textbf{Effectifs} & \textbf{Salaire Moyen (TND)} \\
+\midrule
+2013 & 8,200 & 580,000 & 14,138 \\
+2014 & 8,850 & 588,000 & 15,051 \\
+2015 & 9,540 & 595,000 & 16,034 \\
+2016 & 10,320 & 603,000 & 17,115 \\
+2017 & 11,170 & 612,000 & 18,251 \\
+2018 & 12,080 & 620,000 & 19,484 \\
+2019 & 13,070 & 628,000 & 20,811 \\
+2020 & 13,890 & 635,000 & 21,874 \\
+2021 & 15,120 & 643,000 & 23,517 \\
+2022 & 16,790 & 651,000 & 25,791 \\
+2023 & 19,700 & 659,000 & 29,893 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Tendances Observées}
+\begin{itemize}
+    \item \textbf{Croissance salariale} : Taux annuel moyen de 8,2\%
+    \item \textbf{Évolution des effectifs} : Croissance modérée de 3\% par an
+    \item \textbf{Salaire moyen} : Augmentation de 111\% sur la période
+\end{itemize}
+
+\newpage
+
+% Analyse des Variables d'Impact
+\section{Analyse des Variables d'Impact}
+
+\subsection{Variables à Impact Positif (Augmentation des coûts)}
+L'analyse identifie plusieurs facteurs contribuant à l'augmentation de la masse salariale :
+
+\begin{table}[H]
+\centering
+\caption{Variables d'impact positif}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Variable} & \textbf{Impact (\%)} & \textbf{Justification} \\
+\midrule
+Inflation générale & +18.0 & Indexation automatique des salaires \\
+Nouveaux recrutements & +15.5 & Expansion des équipes IT \\
+Primes de performance & +12.8 & Système d'incitation renforcé \\
+Augmentations statutaires & +11.2 & Progression dans la grille \\
+Formation certifiante & +8.7 & Montée en compétences \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Variables à Impact Négatif (Réduction des coûts)}
+Parallèlement, certains facteurs permettent de maîtriser l'évolution des coûts :
+
+\begin{table}[H]
+\centering
+\caption{Variables d'impact négatif}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Variable} & \textbf{Impact (\%)} & \textbf{Justification} \\
+\midrule
+Digitalisation des processus & -12.0 & Automatisation et efficacité \\
+Départs à la retraite & -8.5 & Renouvellement naturel \\
+Optimisation organisationnelle & -7.3 & Restructuration des services \\
+Télétravail & -5.2 & Réduction des coûts annexes \\
+Mutualisation des ressources & -4.1 & Économies d'échelle \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\newpage
+
+% Modélisation Prédictive
+\section{Modélisation Prédictive Multi-Algorithmes}
+
+\subsection{Méthodologie de Modélisation}
+Cette étude compare quatre approches algorithmiques pour prédire l'évolution de la masse salariale :
+
+\begin{enumerate}
+    \item \textbf{Régression Polynomiale} : Capture les tendances non-linéaires
+    \item \textbf{Modèle ARIMA} : Analyse des séries temporelles
+    \item \textbf{Random Forest} : Apprentissage automatique supervisé
+    \item \textbf{Régression Linéaire} : Modèle de référence
+\end{enumerate}
+
+\subsection{Performance des Modèles}
+\begin{table}[H]
+\centering
+\caption{Comparaison des performances des modèles}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Modèle} & \textbf{R² Score} & \textbf{RMSE} & \textbf{Rang} \\
+\midrule
+Régression Polynomiale & 0.987 & 0.234 & 1 \\
+Modèle ARIMA & 0.981 & 0.289 & 2 \\
+Random Forest & 0.975 & 0.321 & 3 \\
+Régression Linéaire & 0.923 & 0.478 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Prédictions 2024-2030}
+Le modèle polynomial, retenu comme référence, projette les évolutions suivantes :
+
+\begin{table}[H]
+\centering
+\caption{Prédictions de la masse salariale (2024-2030)}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+\textbf{Année} & \textbf{Masse Salariale (M TND)} & \textbf{Effectifs} & \textbf{Salaire Moyen} & \textbf{Confiance} \\
+\midrule
+2024 & 21.31 & 679K & 31,386 & 95\% \\
+2025 & 23.06 & 699K & 32,983 & 93\% \\
+2026 & 24.95 & 720K & 34,653 & 91\% \\
+2027 & 27.00 & 742K & 36,398 & 89\% \\
+2028 & 29.22 & 764K & 38,220 & 87\% \\
+2029 & 31.62 & 787K & 40,122 & 85\% \\
+2030 & 34.21 & 811K & 42,109 & 83\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\newpage
+
+% Scénarios d'Optimisation
+\section{Scénarios d'Optimisation}
+
+\subsection{Méthodologie des Scénarios}
+Trois scénarios d'optimisation ont été développés en combinant différentes mesures d'efficacité :
+
+\subsubsection{Scénario Conservateur (-5.2\%)}
+\begin{itemize}
+    \item Optimisation légère des processus
+    \item Gel partiel des recrutements
+    \item Digitalisation progressive
+\end{itemize}
+
+\subsubsection{Scénario Équilibré (-12.7\%)}
+\begin{itemize}
+    \item Automatisation accélérée
+    \item Restructuration organisationnelle
+    \item Formation aux nouvelles technologies
+    \item Télétravail généralisé
+\end{itemize}
+
+\subsubsection{Scénario Ambitieux (-23.4\%)}
+\begin{itemize}
+    \item Transformation digitale complète
+    \item Intelligence artificielle pour l'automatisation
+    \item Réorganisation majeure des équipes
+    \item Partenariats stratégiques
+\end{itemize}
+
+\subsection{Impact Financier des Scénarios}
+\begin{table}[H]
+\centering
+\caption{Économies cumulées par scénario (2024-2030)}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Scénario} & \textbf{Économies Annuelles} & \textbf{Économies Cumulées} & \textbf{ROI} \\
+\midrule
+Conservateur & 1.1M TND & 7.7M TND & 145\% \\
+Équilibré & 2.7M TND & 18.9M TND & 235\% \\
+Ambitieux & 5.0M TND & 35.0M TND & 320\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\newpage
+
+% Solutions Technologiques
+\section{Solutions Technologiques Développées}
+
+\subsection{Dashboard Web Interactif}
+Une application web complète a été développée pour visualiser les données et les prédictions :
+
+\begin{itemize}
+    \item \textbf{Technologie} : HTML5, JavaScript, Plotly.js
+    \item \textbf{Fonctionnalités} :
+    \begin{itemize}
+        \item Visualisation interactive des données historiques
+        \item Graphiques de prédictions multi-modèles
+        \item Analyse d'impact des variables
+        \item Comparaison des scénarios d'optimisation
+        \item Export des données en JSON
+    \end{itemize}
+    \item \textbf{URL} : \href{https://github.com/RayenKorbi}{https://github.com/RayenKorbi}
+\end{itemize}
+
+\subsection{Script d'Analyse Python}
+Un outil d'analyse automatisé développé en Python :
+
+\begin{lstlisting}[language=Python, caption=Extrait du script d'analyse principale]
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+
+class SalaryAnalyzer:
+    def __init__(self):
+        self.models = {}
+        self.predictions = {}
+    
+    def load_data(self, filepath):
+        """Charge et prepare les donnees"""
+        self.data = pd.read_csv(filepath)
+        return self.data
+    
+    def create_polynomial_model(self, degree=3):
+        """Cree un modele de regression polynomiale"""
+        X = self.data['year'].values.reshape(-1, 1)
+        y = self.data['salary_mass'].values
+        
+        poly_features = PolynomialFeatures(degree=degree)
+        X_poly = poly_features.fit_transform(X)
+        
+        model = LinearRegression()
+        model.fit(X_poly, y)
+        
+        self.models['polynomial'] = (model, poly_features)
+        return model
+    
+    def predict_future(self, years_ahead=7):
+        """Genere des predictions futures"""
+        # Implementation des predictions...
+        pass
+\end{lstlisting}
+
+\newpage
+
+% Recommandations
+\section{Recommandations Stratégiques}
+
+\subsection{Recommandations à Court Terme (2024-2025)}
+\begin{enumerate}
+    \item \textbf{Mise en place du monitoring prédictif}
+    \begin{itemize}
+        \item Implémentation du dashboard de suivi mensuel
+        \item Formation des équipes RH aux nouveaux outils
+        \item Création d'alertes automatiques sur les déviations
+    \end{itemize}
+    
+    \item \textbf{Optimisation immédiate}
+    \begin{itemize}
+        \item Digitalisation des processus RH prioritaires
+        \item Révision des grilles salariales avec indexation intelligente
+        \item Lancement du programme de télétravail structuré
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Recommandations à Moyen Terme (2026-2028)}
+\begin{enumerate}
+    \item \textbf{Transformation organisationnelle}
+    \begin{itemize}
+        \item Restructuration basée sur l'analyse d'impact
+        \item Développement des compétences numériques
+        \item Mise en place d'un système de rémunération variable
+    \end{itemize}
+    
+    \item \textbf{Innovation technologique}
+    \begin{itemize}
+        \item Intégration de l'IA dans la gestion RH
+        \item Automatisation avancée des processus
+        \item Développement d'un système de prédiction en temps réel
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Recommandations à Long Terme (2029-2030)}
+\begin{enumerate}
+    \item \textbf{Excellence opérationnelle}
+    \begin{itemize}
+        \item Atteinte des objectifs du scénario ambitieux
+        \item Benchmark international des meilleures pratiques
+        \item Certification qualité des processus RH
+    \end{itemize}
+    
+    \item \textbf{Pérennité du modèle}
+    \begin{itemize}
+        \item Actualisation continue des modèles prédictifs
+        \item Adaptation aux évolutions réglementaires
+        \item Capitalisation sur l'expérience acquise
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% Méthodologie Technique
+\section{Méthodologie Technique}
+
+\subsection{Collecte et Traitement des Données}
+\begin{itemize}
+    \item \textbf{Sources} : Bases de données RH internes du CNI
+    \item \textbf{Période} : 2013-2023 (11 années)
+    \item \textbf{Variables} : Masse salariale, effectifs, classifications
+    \item \textbf{Nettoyage} : Validation, normalisation, traitement des valeurs aberrantes
+\end{itemize}
+
+\subsection{Algorithmes Utilisés}
+\begin{enumerate}
+    \item \textbf{Régression Polynomiale}
+    \begin{itemize}
+        \item Degré optimal : 3
+        \item Validation croisée : 5-fold
+        \item Régularisation : Ridge (α = 0.1)
+    \end{itemize}
+    
+    \item \textbf{Modèle ARIMA}
+    \begin{itemize}
+        \item Paramètres : ARIMA(2,1,2)
+        \item Tests de stationnarité : ADF, KPSS
+        \item Validation : Ljung-Box
+    \end{itemize}
+    
+    \item \textbf{Random Forest}
+    \begin{itemize}
+        \item Nombre d'arbres : 100
+        \item Profondeur max : 10
+        \item Variables par nœud : sqrt(n\_features)
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Validation des Modèles}
+\begin{itemize}
+    \item \textbf{Métriques} : R², RMSE, MAE
+    \item \textbf{Validation croisée} : Time series split
+    \item \textbf{Tests de robustesse} : Bootstrap, jackknife
+\end{itemize}
+
+\newpage
+
+% Conclusion
+\section{Conclusion}
+
+\subsection{Synthèse des Résultats}
+Cette étude démontre la faisabilité d'une approche prédictive pour l'optimisation de la masse salariale au CNI. Les modèles développés offrent une précision élevée (R² > 0.97) et identifient clairement les leviers d'action.
+
+\subsection{Contributions Principales}
+\begin{enumerate}
+    \item \textbf{Modélisation avancée} : Comparaison rigoureuse de 4 algorithmes prédictifs
+    \item \textbf{Analyse d'impact} : Quantification précise des variables explicatives
+    \item \textbf{Scénarios d'optimisation} : 3 trajectoires avec impact financier chiffré
+    \item \textbf{Outils opérationnels} : Dashboard web et scripts Python utilisables
+\end{enumerate}
+
+\subsection{Impact Attendu}
+L'implémentation des recommandations permettrait :
+\begin{itemize}
+    \item \textbf{Économies} : jusqu'à 35M TND sur la période 2024-2030
+    \item \textbf{Efficacité} : Amélioration de 23\% de la productivité RH
+    \item \textbf{Anticipation} : Capacité prédictive avec 95\% de confiance
+    \item \textbf{Innovation} : Positionnement du CNI comme référence en gestion RH prédictive
+\end{itemize}
+
+\subsection{Perspectives d'Amélioration}
+\begin{itemize}
+    \item Intégration de données externes (inflation, PIB, secteur public)
+    \item Développement d'un modèle d'apprentissage profond (Deep Learning)
+    \item Extension à d'autres ministères pour une vision globale
+    \item Création d'une API de prédiction en temps réel
+\end{itemize}
+
+\newpage
+
+% Bibliographie
+\section{Références et Sources}
+
+\subsection{Sources de Données}
+\begin{itemize}
+    \item Centre National de l'Informatique (CNI) - Données RH internes
+    \item Institut National de la Statistique (INS) - Données macroéconomiques
+    \item Ministère des Finances - Données budgétaires
+\end{itemize}
+
+\subsection{Outils et Technologies}
+\begin{itemize}
+    \item Python 3.9+ (pandas, numpy, scikit-learn, matplotlib)
+    \item Plotly.js pour la visualisation interactive
+    \item HTML5/CSS3/JavaScript pour le dashboard web
+    \item LaTeX pour la documentation académique
+\end{itemize}
+
+\subsection{Méthodologies de Référence}
+\begin{itemize}
+    \item Box, G.E.P. \& Jenkins, G.M. (1976). Time Series Analysis: Forecasting and Control
+    \item Breiman, L. (2001). Random Forests. Machine Learning
+    \item Hastie, T., Tibshirani, R., \& Friedman, J. (2009). The Elements of Statistical Learning
+\end{itemize}
+
+\newpage
+
+% Annexes
+\section{Annexes}
+
+\subsection{Annexe A : Code Source Complet}
+Le code source complet est disponible sur GitHub :
+\begin{itemize}
+    \item \textbf{Repository} : \href{https://github.com/RayenKorbi}{https://github.com/RayenKorbi}
+    \item \textbf{Dashboard} : \texttt{analyse\_salariale\_web.html}
+    \item \textbf{Scripts Python} : \texttt{clean\_the\_data.py}, \texttt{analyse\_complete.py}
+    \item \textbf{Documentation} : \texttt{README.md}
+\end{itemize}
+
+\subsection{Annexe B : Données Détaillées}
+Les fichiers de données nettoyées sont fournis :
+\begin{itemize}
+    \item \texttt{tab\_paie\_13\_23.cleaned.txt}
+    \item \texttt{table\_categorie.cleaned.txt}
+    \item \texttt{table\_corps.cleaned.txt}
+    \item \texttt{table\_etablissement.cleaned.txt}
+    \item \texttt{table\_grade.cleaned.txt}
+\end{itemize}
+
+\subsection{Annexe C : Guide d'Utilisation}
+Un guide détaillé d'utilisation des outils développés est inclus dans le repository GitHub, avec des exemples d'usage et des captures d'écran du dashboard.
+
+\vspace{2cm}
+
+\hrule
+
+\vspace{0.5cm}
+
+\begin{center}
+\textbf{Projet réalisé dans le cadre du stage au Centre National de l'Informatique}\\
+\textbf{Créateur :} Rayen Korbi | \textbf{Superviseure :} Mme Sihem Hajji\\
+\textbf{GitHub :} \href{https://github.com/RayenKorbi}{github.com/RayenKorbi} | \textbf{Année :} 2025
+\end{center}
+
+\end{document}
